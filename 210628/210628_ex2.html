@@ -18,7 +18,7 @@
 
         function calParkingCost(parkingHours, price) {
 
-            const isWeekend = new Date().getDay() % 6;
+            const isWeekend = new Date().getDay() % 6; // 0 ~ 6 ( 토 ~ 일 ), 6 일때 % 연산으로 0으로 만들어 토,일 모두 0의 값을 가지게 함
 
             const freeParkingTime = (
                 price >= 150000 ? 180 :
@@ -26,16 +26,16 @@
                 price >= 50000 ? 60 : 0
             );
 
-            let parkingMinutes = parkingHours * 60 - freeParkingTime;
+            let parkingMinutes = parkingHours * 60 - freeParkingTime; // (총 주차 시간 * 60) - 무료 주차 시간
 
             if (parkingMinutes <= 0) {
                 return 0;
             }
 
-            let basicCharge = (isWeekend == 0 ? 5000 : 2000)
-            let additionalFee = parkingMinutes > 30 ? Math.ceil((parkingMinutes - 30) / 10) : 0; // 
+            let basicCharge = (isWeekend == 0 ? 5000 : 2000) // 평일, 주말 구분하여 기본 요금 부과
+            let additionalFee = parkingMinutes > 30 ? Math.ceil((parkingMinutes - 30) / 10) : 0; // 추가 이용 시간(10분 단위)
 
-            additionalFee *= (isWeekend == 0 ? 2000 : 1000);
+            additionalFee *= (isWeekend == 0 ? 2000 : 1000); // 추가 이용 시간(10분 단위) * 10분 당 요금
 
             //console.log("휴일(0이면) " + isWeekend, "최초 :", basicCharge, "누적 :", additionalFee, "무료시간 : ", freeParkingTime);
             return basicCharge + additionalFee;
