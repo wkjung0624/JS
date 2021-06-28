@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //set 객체
+        // var arr = [];
+        var arr = new Array();
+
+        // var arr 에 [] 를 대입하는 것과 new Array(); 는 동일하다.
+        // [] 는 약식이라고 생각하면 됨
+
+        arr.push(1);
+        arr.push(3);
+
+        var mySet = new Set(); // {} 와 동일
+
+        arr.push(1);
+        arr.push(3);
+        arr.push(5);
+        arr.push(3); // set은 동일한 값을 가질수 없음
+
+        mySet.has(3); // 3이라는 값을 가지고있는지 확인하는 것
+    </script>
+
+</body>
+
+</html>

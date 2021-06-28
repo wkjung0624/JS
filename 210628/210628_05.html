@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="deleteItem();">삭제</button>
+    <a href="https://naver.com" target="_blank">naver</a>
+    <script>
+        // window.open("https://naver.com");
+
+        function deleteItem() {
+            if (confirm("삭제 할까요?")) {
+                // 삭제로직
+            }
+        }
+        setTimeout(function () {
+            alert("프로그램 실행");
+
+        }, 10000); //실무에서 많이 쓰임
+        setInterval(function () {
+            alert("프로그램 실행");
+
+        }, 7000); //실무에서 많이 쓰임
+        var count = 0;
+        var fnc = setInterval(function () {
+            if (count < 15) {
+                console.log("프로그램 실행 : " + count);
+                count++;
+            } else {
+                console.log('종료');
+                clearInterval(fnc);
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src=user_data.js></script>
+    <script>
+        // userList에 있는 사용자 정보 age를 이용
+        // 각 연령대 별로 몇명의 사용자가 있는지 확인하는 프로그램 작성
+        // 함수명 getAgeGroup()
+        // return 각 연령대 별로 몇명있는지
+
+        function getAgeGroup(userInfo) {
+
+            let ageGroup = new Array;
+
+            for (var item of userInfo) {
+                var ageIdx = parseInt(item["age"] / 10);
+
+                if (typeof ageGroup[ageIdx] == "undefined") {
+                    ageGroup[ageIdx] = 1;
+                    continue;
+                }
+                ageGroup[ageIdx] += 1;
+            }
+
+            return ageGroup;
+        }
+
+        console.table(getAgeGroup(userList));
+    </script>
+</body>
+
+</html>

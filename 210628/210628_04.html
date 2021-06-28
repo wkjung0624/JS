@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // round - 반올림
+        // console.log(Math.round(4.9));
+        // console.log(Math.round(4.4));
+        // console.log(Math.round(-4.2));
+
+        // // ceil - 올림
+        // console.log(Math.ceil(4.1));
+
+        // // floor - 내림
+        // console.log(Math.round(4.9));
+
+        // // trunc - 소수점 이하는 버리고 정수만 취함
+        // console.log(Math.trunc(4.9));
+
+        // // sign - 양수 음수 구분함수 (양수 1, 음수 0)
+        // console.log(Math.sign(0));
+
+        // // pow - 제곱
+        // console.log(Math.pow(8, 2));
+
+        // //sqrt - 제곱근
+        // console.log(Math.sqrt(64));
+
+        // //abs - 양수값으로 변환
+        // console.log(Math.abs(-4, 7));
+
+        // function getRandomInteger(min, max) {
+        //     return Math.trunc(Math.random() * (max - min + 1)) + min;
+        // }
+
+        function rspPlayer(select) {
+
+            const arrRsp = ["가위", "바위", "보"];
+
+            const com = Math.trunc(Math.random() * 10 % 3);
+            const user = arrRsp.indexOf(select);
+
+            if (user == -1) {
+                return "Param Error";
+            }
+
+            const flag = Math.abs(user - com)
+            let result = {
+                "comRsp": arrRsp[com],
+                "userRsp": arrRsp[user]
+            }
+
+            if (user == com) {
+                result.set("winner", 0);
+            } else if (flag == 1 && user > com ||
+                flag == 2 && user < com) {
+                result.set("winner", 1);
+            } else if (flag == 1 && user < com ||
+                flag == 2 && user > com) {
+                result.set("winner", -1);
+            }
+
+            return result;
+
+            // switch (Math.abs(player - com)) {
+            //     case 1:
+            //         if (player < com) {
+            //             return -1;
+            //         } else {
+            //             return 1;
+            //         }
+            //         break;
+            //     case 2:
+            //         if (player < com) {
+            //             return 1;
+            //         } else {
+            //             return -1
+            //         }
+            //         break;
+            // }
+        }
+
+        function rspPlayer_tcr(userRsp) {
+
+            const rsp = ["가위", "바위", "보"];
+            const comRsp = rsp[Math.trunc(Math.random() * 10 % 3)];
+            const winValue = {
+                "가위": "보",
+                "바위": "가위",
+                "보": "바위"
+            }
+
+            return {
+                "comRsp": comRsp,
+                "userRsp": userRsp,
+                "winner": userRsp == comRsp ? 0 : winValue[userRsp] == comRsp ? 1 : -1
+            }
+        }
+
+        console.log(rspPlayer("가위"));
+        console.log(rspPlayer("바위"));
+        console.log(rspPlayer("보"));
+    </script>
+</body>
+
+</html>
