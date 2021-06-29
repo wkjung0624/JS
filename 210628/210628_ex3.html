@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 문제. 백화점 주차요금 계산 함수를 제작
+        // 파라미터 - 총 주차시간, 총 구매 금액 (숫자타입))
+        // 
+        // 내가 총 주차한 시간 + 총 구매한 금액의 무료 주차 시간을 적용하여 
+        // 최종적으로 내야될 주차 요금은 얼마인가?
+
+        function calParkingCost(parkingHours, price) {
+
+            const isWeekend = new Date().getDay() % 6; // 0 ~ 6 ( 토 ~ 일 ), 6 일때 % 연산으로 0으로 만들어 토,일 모두 0의 값을 가지게 함
+
+            const freeParkingTime = (
+                price >= 150000 ? 180 :
+                price >= 100000 ? 120 :
+                price >= 50000 ? 60 : 0
+            );
+
+            let parkingMinutes = parkingHours * 60 - freeParkingTime; // (총 주차 시간 * 60) - 무료 주차 시간
+
+            if (parkingMinutes <= 0) {
+                return 0;
+            }
+
+            let basicCharge = (isWeekend == 0 ? 5000 : 2000) // 평일, 주말 구분하여 기본 요금 부과
+            let additionalFee = parkingMinutes > 30 ? Math.ceil((parkingMinutes - 30) / 10) : 0; // 추가 이용 시간(10분 단위)
+
+            additionalFee *= (isWeekend == 0 ? 2000 : 1000); // 추가 이용 시간(10분 단위) * 10분 당 요금
+
+            //console.log("휴일(0이면) " + isWeekend, "최초 :", basicCharge, "누적 :", additionalFee, "무료시간 : ", freeParkingTime);
+            return basicCharge + additionalFee;
+        }
+
+        console.log(calParkingCost(1, 50000));
+    </script>
+</body>
+
+</html>
