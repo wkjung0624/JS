@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+<!-- axios 를 서버개발에 많이 씀 -->
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- // mock 서버, MOCK서버의 존재 여부에 따라 개발 일정에 차이가 난다.
+    // promise, async await  -->
+
+    <script>
+        var url = "https://e69e1d22-4413-45ac-9ce2-22ce84dbe1f9.mock.pstmn.io/getUserList";
+        // PROMISE 방법
+        // var data = axios.get(url);
+        // console.log(data);
+
+        // function getData() {
+        //     return new Promise(function (resolve, reject) {
+        //         axios.get(url).then(function (response) {
+        //             resolve(response.data);
+        //         });
+
+        //         //url로 데이터를 받아오고나면 (.then) 
+        //     });
+        // }
+
+        // getData().then(function (jsondata) {
+        //     console.log(jsondata);
+        //     document.write(jsondata.data);
+        // })
+
+        // var url = "https://e69e1d22-4413-45ac-9ce2-22ce84dbe1f9.mock.pstmn.io/getDrinkList";
+        // getData().then(function (jsondata) {
+        //     console.log(jsondata);
+        //     document.write(jsondata.data);
+        // })
+
+        async function api(url) {
+            return (await axios.get(url)).data;
+        }
+
+        async function getData(path) {
+            var data = (await api(url + path));
+            console.log(data)
+        }
+        async function getUserList(path) {
+            var data = (await api(url + "getUserList"));
+            console.log(data)
+        }
+        async function getDrinkList(path) {
+            var data = (await api(url + "getDrinkList"));
+            console.log(data)
+        }
+
+        //fetch()
+        fetch(url + "getUserList").then(function () {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+        });
+    </script>
+
+</body>
+
+</html>
