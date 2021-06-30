@@ -1,0 +1,96 @@
+main {
+    background-color: rgb(219, 229, 245);
+    border: 2px solid;
+    border-spacing: 0px;
+    padding: 5px;
+
+    width: 860px;
+    height: 600px;
+}
+
+#left-info-bar {
+    height: 150px;
+    float: left
+}
+
+#right-info-bar {
+    height: 150px;
+    float: left
+}
+
+#main-contents {
+    background-color: rgb(180, 210, 255);
+    border: 2px solid;
+    border-radius: 10px;
+    border-spacing: 0px;
+    padding: 5px;
+    margin: 20px;
+
+    width: 500px;
+    height: 500px;
+
+    float: left;
+}
+
+.btn-item {
+    border: 2px solid;
+    border-radius: 15px;
+    color: rgb(9, 0, 87);
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    width: 80px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(89, 161, 255);
+}
+
+.btn-item:hover {
+    background-color: rgb(68, 0, 255);
+    color: rgb(200, 255, 0);
+}
+
+.disable {
+    border: 2px solid;
+    border-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    width: 80px;
+    padding: 10px;
+    margin: 10px;
+
+    background-color: rgb(241, 117, 117);
+    color: rgb(255, 0, 0);
+}
+
+#side-bar {
+
+    border: 2px solid;
+    border-spacing: 0px;
+    padding: 5px;
+    margin: 20px;
+    background-color: white;
+    width: 250px;
+    height: 500px;
+
+    float: left;
+
+    white-space: nowrap;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
+.btn-deposit {
+    width: 85px;
+    height: 60px;
+    font-weight: bold;
+    background-color: rgb(155, 155, 155);
+    color: white;
+    margin: 15px;
+}
+
+.btn-deposit:hover {
+    background-color: rgb(21, 255, 0);
+    color: rgb(0, 5, 75);
+}

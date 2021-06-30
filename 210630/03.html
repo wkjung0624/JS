@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+// 문자열 더할 때 퍼포먼스 문제
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myUL">
+        <!-- afterbegin -->
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <!-- beforebegin -->
+    </ul>
+
+    <button onclick="myFunction()">클릭</button>"
+    <button id="btn">클릭2</button>"
+
+    <select name="" id="" onchange="selectCity(this);">
+        <option value="">국가를 선택하시오</option>
+        <option value="ko">대한민국</option>
+        <option value="jp">일본</option>
+    </select>
+    <select name="" id="sel_city"></select>
+    <script>
+        var oCity = {
+            "ko": [{
+                cityCOde:
+            }]
+        }
+    </script>
+    <select name="" id="" onchange="selectCity(this);">
+        <option value="서울">서울</option>
+        <option value="제주">제주</option>
+        <option value="부산">부산</option>
+        <option value="대전">대전</option>
+        <option value="포항">포항</option>
+    </select>
+
+    <script>
+        function selectCity(ele) {
+            console.log(ele.value)
+        }
+
+        function myFunction() {
+            // innerHTML 만 써도 웬만한건 가능
+            // insertAdjacentHTML()
+            // 파라미터가 2개
+            // afterbegin
+            // afterend
+            // beforebegin
+            // beforeend
+
+            console.log("이벤트 onclick을 통해서 발생");
+        }
+        //addEventListener
+        document.getElementById("btn").addEventListener("click", function () {
+            console.log("이벤트 클릭");
+        });
+
+        // id 값을 세팅하는 것도 협업에서 어떤게 가장 효율이 좋은지 생각
+    </script>
+</body>
+
+</html>

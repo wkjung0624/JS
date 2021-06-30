@@ -1,0 +1,18 @@
+// Document 객체
+// .getElementById
+// .getElementByClass
+
+// Element 메서드
+// .innerHTM
+// .addEventListener
+
+// 자바스크립트 이벤트
+// onload
+// onunload 빠져나가는 순간에 처리할 때
+// onclick
+// onblur
+
+onblur="myfunction(event);" 의 이벤트가 뭔지
+
+한 단어 내 두 단어가 존재하는 경우 그다음 글자를 대문자
+예: font-size => fontSize (카멜케이스)

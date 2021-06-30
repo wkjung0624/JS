@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="top_text"><br>
+    <input type="text" name="" id="bottom_text"><br>
+    <button onclick="myFunction();">조회</button>
+
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="js"> Javascript
+    </label>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="css"> CSS
+    </label>
+
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="html"> HTML
+    </label>
+
+
+    <div style="margin-top: 20px;">
+        <button id="btnSave" onclick="myFunction(this, event);">sadsad </button>
+    </div>
+
+    // 함수에 this 와 event를 파라미터로 넣는거??
+    <script>
+        function myFunction(object, e) {
+            // var btnSave = document.querySelector("#btnSave");
+            // btnSave.disabled = true;
+
+            // setTimeout(function () {
+            //     btnSave.disabled = false;
+            // })
+            console.log(object, "Das");
+            this.disabled = true;
+            setTimeout(function () {
+                this.disabled = false;
+            }, 3000)
+
+            var txtArr = [
+                document.getElementById("top_text"),
+                document.getElementById("bottom_text")
+            ];
+
+            console.log(txtArr);
+
+            txtArr[0].value = "";
+            txtArr[1].value = "";
+
+            var pTagText = document.getElementsByTagName("p");
+            console.log(pTagText);
+
+            var chks = document.getElementsByName("chk_interest");
+            console.log(chks);
+
+            for (var chk of chks) {
+                if (chk.checked) {
+                    console.log(chk.value);
+                }
+            }
+            document.querySelector("#top_text");
+            document.querySelectorAll("[name=chk_interest]:checked")
+
+            var rdoCities = document.getElementsByName("city");
+
+            for (var city of rdoCities) {
+                if (city.checked) {
+                    console.log(city.value);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

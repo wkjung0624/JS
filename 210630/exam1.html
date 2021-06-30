@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mighty Otter's Vending Mechine</title>
+    <link rel="stylesheet" href="exam1.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;"> 나의 자판기에 온 것을 환영한다.</h1>
+    <main>
+        <div id="main-contents">
+            <div id="btn-group">
+                <div class="btn btn-item" id="torta" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="coke" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="cyder" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="pepsi" onclick=itemClicked(this)></div>
+
+                <div class="btn btn-item" id="mxwel" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="hutgae" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="vita500" onclick=itemClicked(this)></div>
+                <div class="btn btn-item" id="skybori" onclick=itemClicked(this)></div>
+            </div>
+            <div id="btn-group">
+                <button class="btn-deposit" onclick="insert(100)"> 100 원 </button>
+                <button class="btn-deposit" onclick="insert(500)"> 500 원 </button>
+                <button class="btn-deposit" onclick="insert(1000)"> 1000 원 </button>
+                <button class="btn-deposit" onclick="insert(5000)"> 5000 원 </button>
+            </div>
+
+            <div id="left-info-bar">
+                <h3>기계가 가진 금액 : <input type="text" id="vendingWallet"></input> 원</h3>
+                <h3>기계에 투입한 금액 : <input type="text" id="insertWallet"></input> 원</h3>
+                <h3>내가 가진 금액 : <input type="text" id="myWallet"></input> 원</h3>
+            </div>
+            <div id="right-info-bar">
+                <button
+                    style="width:80px; height:125px; margin:15px; font-weight: bold; color:white; background-color: blueviolet;"
+                    onclick=moneyBack();>
+                    반환</button>
+            </div>
+            <div id="btn-group">
+                <button class="btn-deposit" onclick="deposit(100)"> 100 원 </button>
+                <button class="btn-deposit" onclick="deposit(500)"> 500 원 </button>
+                <button class="btn-deposit" onclick="deposit(1000)"> 1000 원 </button>
+                <button class="btn-deposit" onclick="deposit(5000)"> 5000 원 </button>
+            </div>
+        </div>
+
+        <div id="side-bar">
+        </div>
+    </main>
+
+
+    <script src="exam1.js"></script>
+</body>
+
+</html>
