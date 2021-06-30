@@ -49,7 +49,6 @@ let productList = {
 
 //document.getElementsByClassName("btn").addEventListener("click", itemClicked(this));
 
-
 init();
 
 function init() {

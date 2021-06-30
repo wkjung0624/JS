@@ -16,3 +16,33 @@ onblur="myfunction(event);" 의 이벤트가 뭔지
 
 한 단어 내 두 단어가 존재하는 경우 그다음 글자를 대문자
 예: font-size => fontSize (카멜케이스)
+
+ userList[0].data = 100 일떄
+// 자판기에서 
+let value = userList[0].data
+let value -= 1;
+
+value = 99; 인데 userList[0].data 도 99 가 되는 이유
+50번 html파일 확인
+변수 값을 중괄호로 선언하는 순간 메모리 주소만 참조하는것(?)
+배열같은 형태일때는 값을 받아오는 것이 아닌 주소를 받아오게됨
+값만 받아오는 경우는 더이상 쪼개어지지 않는 원소인 경우만 값복사
+
+filter 함수는 자동으로 하나하나 리스트의 요소들을 진행하게됨
+그리고 filter의 매게변수는 함수를 넘기고 return 값에는
+true, false 값이 들어가며 이것을 기준으로 리스트의 요소를
+포함할지 패스할지 정해진다.
+*실무에서 많이 쓰임, 중요함!!
+예시) 
+var drinks = drinklist.filter(function(drink){
+    return drink.price <= 1000;
+})
+화살표함수 사용 예시)
+var drinks = drinklist.filter((drink) => drink.price <= 1000);
+
+
+웹퍼블리셔가 페이지를 새로 만들때 기존사용했던 버튼이 바뀌는 경우 ID 나 Name값이 없어 질 수 있다.
+이로인해 개발자는 해당 ID 또는 NAme과 연계한 이벤트가 있었는데 변경으로 인해 다시 연결해주는 과정이
+필요하고 번거롭고 소모적이며 비생산적이므로 웹퍼블리셔와 사전에 협의를 통해 ~~한 부분은 ~~~식으로
+ID나 NAME값을 부여해달라고 요청하면 추후에 바뀌는 부분이 있어도 부가적인 작업을 할 필요가 없어지며
+업무의 효율성이 높아진다
