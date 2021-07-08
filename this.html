@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var value = "func Window"
+        console.log("test:", B());
+
+        function A() {
+            var value = "func A"
+            console.log("A:", this.value);
+
+
+            function B() {
+                var value = "func B"
+                console.log("B:", this.value);
+            }
+
+            B();
+        }
+
+        var C = {
+            value: "myValue",
+            func: D
+        }
+
+        function D() {
+            console.log("D:", this.value);
+        }
+
+        function EE() {
+            value = "func E";
+            console.log("E:", this.value); // new 키워드로 생성한 E 변수는 생성한 객체(E 변수)에 value 변수(E.value)가 없으므로 Undefined 리턴
+        }
+
+        function FF() {
+            value = "func F"
+            console.log("F:", this.value);
+        }
+
+        A();
+        C.func();
+        D();
+        var E = new EE();
+        var F = FF();
+    </script>
+</body>
+
+</html>
